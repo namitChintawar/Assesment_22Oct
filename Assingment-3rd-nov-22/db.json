@@ -1,0 +1,17 @@
+{
+  "user_data": [
+    {
+      "id": 1,
+      "age": 21,
+      "username": "Namit",
+      "password": "xyz",
+      "email": "xyz@gmail.com",
+      "phone": 1234567899,
+      "gender": "male",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": 411012,
+      "country": "India"
+    }
+  ]
+}

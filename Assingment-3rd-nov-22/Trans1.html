@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trans-Table</title>
+</head>
+
+
+
+
+<script>
+
+fetch("http://localhost:3000/trans",{
+          method:"GET",
+          headers:{
+            'Content-Type':'application/json'
+          }
+        }).then(response=>response.json())
+         .then(response=>{
+   // let placeholder = document.querySelector("#data-output");
+
+   var out = "";
+   for(let tran of response){
+      out += `
+         <tr>
+            <td>${tran.Transid}</td>
+            <td>${tran.Fromuser}</td>
+            <td>${tran.Touser}</td>
+            <td>${tran.Date}</td>
+            <td>${tran.Amount}</td>
+            <td>${tran.Time}</td>
+            <td>${tran.Status}</td>
+            <td>${tran.Email}</td>
+         </tr>`
+   }
+   document.getElementById("data-output").innerHTML=out;
+ 
+   // placeholder.innerHTML = out;
+});
+
+
+</script>
+
+<body>
+    <table  >
+        <thead>
+           <tr>
+              <th>Trans-ID</th>
+              <th>From_User</th>
+              <th>To_User</th>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Time</th>
+              <th>Status</th>
+              <th>Email</th>
+           </tr>
+        </thead>
+        <tbody id="data-output">
+
+        </tbody>
+     </table>
+   
+</body>
+</html>

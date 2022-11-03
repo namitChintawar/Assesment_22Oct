@@ -1,0 +1,150 @@
+<!Doctype Html>
+<Html>   
+<Head>    
+<Title>   
+Make a Navigation Bar
+</Title>
+<style type=text/css> 
+
+body 
+{
+height: 125vh;
+margin-top: 80px;
+padding: 30px;
+background-size: cover;
+font-family: sans-serif;
+}
+header {
+background-color: orange;
+position: fixed;
+left: 0;
+right: 0;
+top: 5px;
+height: 30px;
+display: flex;
+align-items: center;
+box-shadow: 0 0 25px 0 black;
+}
+header * {
+display: inline;
+}
+header li {
+margin: 20px;
+}
+header li a {
+color: blue;
+text-decoration: none;
+}
+</style> 
+</Head>
+<script>
+
+
+  function save(){
+
+
+    // var username=document.getElementById("username").value;
+    //     var email=document.getElementById("email").value;
+    //     var phone=document.getElementById("phone").value;
+    //     var gender=document.getElementById("gender").value;
+    //     var country=document.getElementById("country").value;
+    //     var state=document.getElementById("state").value;
+    //     var city=document.getElementById("city").value;
+    //     var pin=document.getElementById("pin").value;
+
+
+    fetch("http://localhost:3000/user_data",{
+       method:"GET",        
+       headers:{
+           'Content-Type':'application/json'
+       }
+   }).then(response => response.json())
+     .then(response => 
+     {
+       console.log(response);
+       let tab = `<tr>
+                   <th>TransactionId</th>
+                   <th>From</th>
+                   <th>To</th>
+                   <th>TransactionAmount</th>
+                   <th>TransactionDate</th>
+                   <th>TransactionTime</th>
+                   <th>TransactionStatus</th>
+                   </tr>`;
+                   for (let d of response){
+                       tab += `<tr>
+                               <td>${d.transactionId}</td>
+                               <td>${d.from}</td>
+                               <td>${d.to}</td>
+                               <td>${d.transactionAmount}</td>
+                               <td>${d.transactionDate}</td>
+                               <td>${d.transactionTime}</td>
+                               <td>${d.transactionStatus}</td>
+                               </tr>`
+                   }
+                   document.getElementById("users-table").innerHTML = tab;
+     }      
+     );  
+    }  
+</script>
+<Body> 
+<header>
+<nav>
+<ul>
+<li>
+<a href="#"> Home </a>
+</li>
+<li>
+<a href="#"> user </a>
+</li>
+<li>
+<a href="#"> Transaction </a>
+</li>
+<li> <a href="#"> Logout </a>
+</li>
+<!-- <li>
+<a href="#"> Join Us </a>
+</li> -->
+</ul>
+</nav>
+</header>
+<!-- You are at JavaTpoint Site..... -->
+
+<h2>Transaction Details</h2>
+<!-- <p>Resize the browser window to see the effect. When the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other.</p> -->
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
+      
+        <div class="row">
+          <div class="col-50">
+            <!-- <h3>Transaction Details</h3> -->
+            <label for="transactionId"><i class="fa fa-user"></i> TransactionId</label>
+            <input type="text" id="fname" name="transactionId" placeholder="John M. Doe"><br><br>
+            <label for="from"><i class="fa fa-envelope"></i> From</label>
+            <input type="text" id="from" name="from" ><br><br>
+            <label for="To"><i class="fa fa-address-card-o"></i> To </label>
+            <input type="text" id="To" name="To"><br><br>
+            <label for=" TransactionAmount"><i class="fa fa-institution"></i> TransactionAmount</label>
+            <input type="number" id="TransactionAmount" name="TransactionAmount" placeholder="Transaction Amount"><br><br>
+            <label for=" Transaction Date"><i class="fa fa-institution"></i> TransactionDate</label>
+            <input type="number" id="TransactionDate" name="TransactionDate" placeholder="Transaction Date"><br><br>
+            <label for=" Transaction Time"><i class="fa fa-institution"></i> TransactionTime</label>
+            <input type="time" id="TransactionTime" name="TransactionTime" placeholder="Transaction Timr"><br><br>
+            <label for=" Transaction Status"><i class="fa fa-institution"></i> TransactionStatus</label>
+            <input type="text" id="TransactionStatus" name="TransactionStatus" placeholder="Transaction Status"><br><br>
+
+            
+        <input type="submit" value="Continue to checkout" onclick="save() "class="btn">
+
+        <h2> List Users </h2>
+        <table id="users-table">
+
+            <a href="login.html">go back</a>
+      </form>
+    </div>
+  </div>
+  
+</Body> 
+</Html>
