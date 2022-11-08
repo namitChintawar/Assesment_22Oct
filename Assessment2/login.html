@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+    <style>
+            body{
+                background-color: beige;
+                text-align: center;
+                border: 50px;
+                margin: 100px;
+            }
+        </style>
+</head>
+<script>
+   function save(){
+    var email = document.getElementById("Email").value;
+    var password = document.getElementById("Password").value;
+    //alert(name + " " + age);
+    fetch("http://localhost:3000/users",{
+        method:"GET",
+        headers:{
+        'Content-Type':'application/json'
+      }
+    }).then(response=>response.json())
+    .then(json=>{
+        json.map(data=>{
+
+            if(data.Email==email && data.Password==password){
+                alert("User verified")
+                location="homepage.html";
+               
+                flag = 1
+                return
+            }})
+        if(flag==0){
+        alert("User not Verified");
+    }})
+   }
+
+   function signup(){
+       location="Signup.html";
+   }
+   
+
+</script>
+<body>
+    <h2> Login</h2>
+    <div>
+        Email: <input type="text" id="Email" /> <br /> <br />
+        Password: <input type="password" id="Password" placeholder="Password" required=""><br><br>
+        <input type="submit" value="LOGIN" onclick="save()"/>
+        <input type="button" value="SIGN UP" onclick="signup()"><br><br>
+        <a href="">Forgot Password</a><br><br>
+    </div>
+</body>
+</html>

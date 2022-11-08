@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "Username": "Namit",
+      "Email": "Namitc@gmail.com",
+      "Age": "21",
+      "Gender": "Male",
+      "Password": "1122"
+    },
+    {
+      "Username": "raj",
+      "Email": "raj@gmail.com",
+      "Age": "33",
+      "Gender": "on",
+      "Password": "1234",
+      "id": 2
+    },
+    {
+      "Username": "john",
+      "Email": "john@gmail.com",
+      "Age": "37",
+      "Gender": "on",
+      "Password": "1234",
+      "id": 3
+    },
+    {
+      "Username": "bekky",
+      "Email": "b@gmail.com",
+      "Age": "23",
+      "Gender": "on",
+      "Password": "1234",
+      "id": 4
+    },
+    {
+      "Username": "watson",
+      "Email": "w@gmail.com",
+      "Age": "34",
+      "Gender": "on",
+      "Password": "1234",
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SignUp Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<style>
+        body{
+            background-color: beige;
+            text-align: center;
+            border: 50px;
+            margin: 100px;
+        }
+    </style>
+</head>
+
+
+<script>
+    
+
+function save(){
+        var username=document.getElementById("Username").value;
+        var email=document.getElementById("email").value;
+        var gender=document.getElementById("gender").value;
+        var password=document.getElementById("password").value;
+        var age=document.getElementById("age").value;
+
+
+
+        fetch("http://localhost:3000/users",{
+            method:"POST",
+            body:JSON.stringify({"Username":username,"Email":email,
+           "Age":age,"Gender":gender,"Password":password}),
+            headers:{
+                'Content-Type':'application/json'
+            }
+    }).then(Response => Response.json())
+    .then(Response => {console.log("Data Added successfully")});
+	alert("Data Added Successfully");
+
+  
+    
+}
+
+
+
+
+</script>
+<body>
+	
+	<div class="main-w3layouts wrapper">
+		<h1>SignUp Form</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<div>
+					<input class="text" type="text" id="Username" placeholder="Username" required=""><br><br>
+					<input class="text email" type="text" id="email" placeholder="Email" required=""><br><br>
+                    <input class="text email" type="text" id="phone" placeholder="Phone" required=""><br><br>
+                    
+                    Select Gender: <br><br>
+                    <input  type="radio" id="gender" name="inlineRadioOptions">Male <br><br>
+                    <input  type="radio" id="gender" name="inlineRadioOptions">Female<br><br>
+                    <input  type="radio" id="gender" name="inlineRadioOptions">Other<br><br>
+                    <input class="text email" type="text" id="age" placeholder="Age" required=""><br><br>
+					<input class="text" type="password" id="password" placeholder="Password" required=""><br><br>
+					<input class="text w3lpass" type="password" id="pass" placeholder="Confirm Password" required=""><br><br>
+					<div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>I Agree To The Terms & Conditions</span><br><br>
+						</label>
+						<div class="clear"> </div>
+					</div>
+					<input type="submit" value="SIGNUP" onclick="save()"><br><br>
+            
+                    
+				</div>
+				<p>Don't have an Account? <a href="login.html"> Login Now!</a></p>
+			</div>
+		</div>
+
+	</div>
+	<!-- //main -->
+</body>
+</html>
