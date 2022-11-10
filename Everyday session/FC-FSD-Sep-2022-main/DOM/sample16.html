@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: yellow;
+        text-align: center;
+        border: 10px solid black;
+        padding: 50px;
+        margin: 10px;
+        position: absolute;;
+        border-bottom-style: dashed;
+        text-shadow: 30px;
+        font-family: 'Courier New', Courier, monospace;
+        box-align: center;
+    
+    }
+    body :hover{
+        color: aqua;
+        text-shadow: 30px;
+    }
+    li{
+        color:olivedrab;
+        list-style-type: upper-latin;
+    }
+    img{
+        size: 10px;
+        width: 15cm;
+        height: 20cm;
+    }
+    img :hover{
+        border: 10px solid red;
+    }
+    iframe{
+        border: 10px solid green;
+    }
+</style>
+<body>
+
+    <ul id="menu">
+        
+        <li>services</li>
+        <li>About</li>
+        <li>contact</li>
+    </ul> 
+
+    <script>
+        let menu = document.getElementById("menu");
+        let li = document.createElement("li");
+        li.textContent="Home";
+        menu.insertBefore(li, menu.firstElementChild);
+
+        
+    </script>
+
+    <img src="batman.jpg" alt="batman">
+   
+<iframe
+ width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">video
+</iframe>
+</body>
+
+</html>

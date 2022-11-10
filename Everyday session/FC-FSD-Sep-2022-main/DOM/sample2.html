@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavsScript getElementsByName() Demo</h1>
+    <h2>First Headinf</h2>
+    <p>This is the first parta</p>
+    <h2>Second heading</h2>
+    <p>this is second para</p>
+    <h2>third para</h2>
+    <p>this is third para</p>
+    
+    <button id="iAmBtn">count H2</button>
+
+    <script>
+        let btn=document.getElementById('iAmBtn');
+        btn.addEventListener('click', () => {
+            let headings = document.getElementsByTagName('h2');
+            let para = document.getElementsByTagName('p');
+            alert(`the number of H2 tags are ${headings.length}  
+            and the number of P tags present are ${para.length}`);
+        })
+    </script>
+    
+</body>
+</html>

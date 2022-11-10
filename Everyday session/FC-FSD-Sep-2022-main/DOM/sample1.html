@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Please Rate the Service</h2>
+    <h2>
+        <label for="very-poor">
+            <input type="radio" name="rate" value="very poor" id="very-poor"> very poor
+        </label>
+
+        <label for="poor">
+            <input type="radio" name="rate" value="poor" id="poor"> poor
+        </label>
+
+        <label for="OK">
+            <input type="radio" name="rate" value="OK" id="OK"> OK
+        </label>
+
+        <label for="good">
+            <input type="radio" name="rate" value="good" id="good"> good
+        </label>
+
+        <label for="very-good">
+            <input type="radio" name="rate" value="very good" id="very-good"> very good
+        </label>
+    </h2>
+
+    <h3>
+        <button id = "btnRate">Submit</button>
+    </h3>
+
+    <h3 id="output"></h3>
+
+    <script>
+        let btn = document.getElementById('btnRate');
+        let out = document.getElementById('output');
+
+        btn.addEventListener('click', () => {
+            let rates = document.getElementsByName('rate');
+            rates.forEach( (rate) => {
+                if(rate.checked){
+                    output.innerText = `You selected: ${rate.value}`;
+                }
+            })
+        })
+    
+    </script>
+    
+</body>
+</html>
